@@ -14,7 +14,8 @@ func main() {
   e.Use(middleware.Logger())
   e.Use(middleware.Recover())
 
+  // ルーティング
   router.Router(e)
 
-  e.Start(":1323")
+  e.Logger.Fatal(e.Start(":1323"))
 }
