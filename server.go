@@ -7,16 +7,14 @@ import (
 )
 
 
-
-
 func main() {
   e := echo.New()
 
-  router.Router(e)
-
   // ミドルウェアの追加
   e.Use(middleware.Logger())
+  e.Use(middleware.Recover())
 
+  router.Router(e)
 
   e.Start(":1323")
 }
