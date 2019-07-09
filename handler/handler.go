@@ -6,6 +6,7 @@ import (
     "strconv"
 )
 
+
 func HelloHandler(c echo.Context) error {
   	return c.String(http.StatusOK, "Hello, World!")
 }
@@ -27,4 +28,15 @@ func IdPlusHandler(c echo.Context) error {
     int_id += 1
 
     return c.String(http.StatusOK, strconv.Itoa(int_id))
+}
+
+
+// jsonファイルを返す
+func JsonHandler (c echo.Context) error {
+  jsonMap := map[string]string{
+            "foo": "bar",
+            "hoge": "fuga",
+        }
+
+  return c.JSON(http.StatusOK, jsonMap)
 }
