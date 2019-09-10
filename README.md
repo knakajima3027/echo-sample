@@ -1,6 +1,6 @@
 ## echoの使い方メモ  
 
-## ミドルウェア  
+### ミドルウェア  
 ```go:
 import "github.com/labstack/echo/middleware"
 
@@ -13,9 +13,17 @@ e.Use(middleware.Logger())
 ### middleweare.Logger()  
 画面にログを表示
 
-## 環境構築  
+### echoのインストール  
 `go get -u github.com/labstack/echo/...`
 
-## 実行方法  
+### 実行方法  
 `go run server.go`  
 http://localhost:1323
+
+
+## gormの使い方メモ  
+### gormのインストール  
+`go get github.com/jinzhu/gorm`  
+
+### SQLite3ドライバのインストール  
+`go get github.com/mattn/go-sqlite3`
