@@ -3,11 +3,13 @@ package main
 import (
   "github.com/labstack/echo"
   "github.com/labstack/echo/middleware"
-  "./router"
+  "./handler"
 )
 
 
 func main() {
+
+  // Echoインスタンスの生成
   e := echo.New()
 
   // ミドルウェアの追加
@@ -15,7 +17,10 @@ func main() {
   e.Use(middleware.Recover())
 
   // ルーティング
-  router.Router(e)
+  e.GET("/hello",    handler.HelloHandler)
+  e.GET("/userid/:id",      handler.IdHandler) // urlの値を読み取り表示する
+  e.GET("/userid/plus/:id", handler.IdPlusHandler)
+  e.GET("/json",     handler.JsonHandler)
 
   e.Logger.Fatal(e.Start(":1323"))
 }

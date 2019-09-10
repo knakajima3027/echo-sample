@@ -14,7 +14,7 @@ e.Use(middleware.Logger())
 画面にログを表示
 
 ## 環境構築  
-` go get -u github.com/labstack/echo/...`
+`go get -u github.com/labstack/echo/...`
 
 ## 実行方法  
 `go run server.go`  

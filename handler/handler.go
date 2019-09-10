@@ -24,7 +24,6 @@ func IdPlusHandler(c echo.Context) error {
     id := c.Param("id")
 
     int_id, _ := strconv.Atoi(id)
-
     int_id += 1
 
     return c.String(http.StatusOK, strconv.Itoa(int_id))
