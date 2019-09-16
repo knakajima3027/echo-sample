@@ -27,3 +27,6 @@ http://localhost:1323
 
 ### SQLite3ドライバのインストール  
 `go get github.com/mattn/go-sqlite3`
+
+## コンテナの生成  
+`docker-compose up`
